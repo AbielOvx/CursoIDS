@@ -9,7 +9,8 @@
 </head>
 
 <body>
-    <button id="request">Peticion</button>
+    <!-- <button id="request">Peticion GET</button> -->
+    <button id="request">Peticion POST</button>
     <section id="container">
         Respuesta a peticion:
         <hr>
@@ -79,25 +80,50 @@
 
 
 
-        let req = new XMLHttpRequest(),
-            method = "GET",
-            url = "https://jsonplaceholder.typicode.com/posts/1/comments";
+        // let req = new XMLHttpRequest(),
+        //     method = "GET",
+        //     url = "https://jsonplaceholder.typicode.com/posts/1/comments";
 
-        req.open(method, url, true);
+        // req.open(method, url, true);
+        // let contador = 0;
+
+        // req.onreadystatechange = function() {
+        //     consola(["cuantas veces se revisó?: ", contador]);
+        //     contador++;
+        //     if (req.readyState === XMLHttpRequest.DONE && req.status === 200) {
+        //         consola(req.responseText);
+        //         enPantalla(JSON.parse(req.responseText));
+        //     }
+        // };
+
+        // document.getElementById('request').addEventListener('click', function() {
+        //     this.style.display = 'none';
+        //     req.send();
+        // });
+
+
+
+        let datos = {
+            "delay": "5"
+        }
+
+        let request = new XMLHttpRequest();
+        request.open("POST", "https://httpbin.org/delay/5", true);
+
         let contador = 0;
-
-        req.onreadystatechange = function() {
-            consola(["cuantas veces se revisó?: ", contador]);
+        request.onreadystatechange = function() {
+            consola(["Cuantas veces se reviso? ", contador]);
             contador++;
-            if (req.readyState === XMLHttpRequest.DONE && req.status === 200) {
-                consola(req.responseText);
-                enPantalla(JSON.parse(req.responseText));
+            if (request.readyState === XMLHttpRequest.DONE && request.status === 200) {
+                consola(request.responseText);
+                enPantalla(request.responseText);
+
             }
         };
 
-        document.getElementById('request').addEventListener('click', function() {
-            this.style.display = 'none';
-            req.send();
+        document.getElementById("request").addEventListener("click", function() {
+            this.style.display = "none";
+            request.send();
         });
     </script>
 </body>
