@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Peticiones HTTP</title>
+</head>
+<body>
+    <section id="container">
+        Respuesta a peticion:
+        <hr>
+    </section>
+    <script>
+        // //PETICION GET
+        // var req = new XMLHttpRequest();
+        // req.open('GET','https://jsonplaceholder.typicode.com/posts',false);
+        // req.send(null);
+        // if (req.status==200) {
+        //     console.log("Respuesta correcta");
+        //     display(req.responseText);
+        // }else
+        //     console.log("La peticion falló");
+
+        // function display(text){
+        //     let element = document.getElementById("container");
+        //     element.innerHTML += text;
+        // }
+
+
+            function enPantalla(text){
+                let element = document.getElementById('container');
+                element.innerHTML += text;
+            }
+
+            function consola(text){
+                console.log(text);
+            }
+
+            const req = new XMLHttpRequest();
+            req.addEventListener('load',()=>{
+                if (req.status === 200) {
+                    consola(req.responseText);
+                    consola(JSON.parse(req.responseText));
+                    enPantalla(req.responseText);
+                }else
+                    consola([req.status,req.statusText]);
+            });
+
+            req.addEventListener('error', ()=>{
+                consola('Error de red');
+            });
+
+            req.open('GET','https://jsonplaceholder.typicode.com/posts', true);
+            req.send(null);
+
+
+    </script>
+</body>
+</html>
