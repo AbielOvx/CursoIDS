@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  
+    <title>Ejercicio 2</title>
+</head>
+<body>
+    <form>
+        <section>
+            <fieldset>
+                <legend>Datos Personales</legend>
+                <label for="Nombre">Nombre</label>
+                <input type="text" name="Nombre">
+                <br> <br>
+                <label for="Edad">Edad</label>
+                <input type="text" name="Edad">
+            </fieldset>
+        </section>
+
+        <section>
+                <fieldset>
+                    <legend>Cultura General</legend>
+                    <label for="Capital">Capital de Noruega: </label>
+                    <input type="radio" name="Capital" value="Copenhague">Copenhague
+                    <input type="radio" name="Capital" value="Helsinki">Helsinki
+                    <input type="radio" name="Capital" value="Oslo">Oslo
+                    <br> <br>
+                    <label for="Fecha">Fecha de la Revolucion Francesa: </label>
+                    <input type="radio" name="Fecha" value="1492">1492
+                    <input type="radio" name="Fecha" value="1789">1789
+                    <input type="radio" name="Fecha" value="1917">1917
+                    
+                </fieldset>
+            </section>
+            <br>
+
+        <input type="submit" name="btn_enviar" value="Enviar">
+        <input type="reset" name="btn_limpiar" value="Borrar">
+    </form>
+
+    <section>
+        <h1>HTML5 number input</h1>
+        <u><h3>Ejemplo1</h3></u>
+        <form >
+            <label for="edad">Introduce tu edad: </label>
+            <input type="number" name="edad" id="edad" required>
+            <input type="submit" name="btn_edad" value="Enviar">
+        </form>
+        
+        <br><br>
+
+        <u><h4>Ejemplo2</h4></u>
+        <form>
+            <label for="edad2">Introduce tu edad (min 18, max 99, campo obligatorio): </label>
+            <input type="text" min="18" max="99" name="edad2" id="edad2" required>
+            <input type="submit" name="btn_edad2" value=Enviar>
+        </form>
+        <br><br>
+
+        <u><h4>Ejemplo3</h4></u>
+        <form>
+            <label for="edad3">Introduce tu edad (min 18, max 99, campo obligatorio): </label>
+            <input type="number" min="18" max="99" name="edad3" id="edad3" required>
+            <input type="submit" name="btn_edad3" value=Enviar>
+        </form>
+        
+    </section> 
+<br><br>
+    <dialog open>    
+            <p onclick="this.style.color='red'">Este parrafo ...</p>
+            <p ondblclick="this.style.color='red'">Este parrafo ...</p>
+            <p onmouseup="this.style.color='red'">Este parrafo ...</p>
+            <p onmousedown="this.style.color='red'">Este parrafo ...</p>
+            <p onmousemove="this.style.color='red'">Este parrafo ...</p>
+            <p onmouseover="this.style.color='red'">Este parrafo ...</p>
+            <p onmouseout="this.style.color='red'">Este parrafo ...</p>
+    </dialog>
+</body>
+</html>

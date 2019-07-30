@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>POO</title>
+</head>
+<body>
+    
+    <script>
+        class Animal {
+            constructor(nombre){
+                this.name = nombre;
+                console.warn("Ha nacido un animal");
+            }
+
+            static despedirse(){
+                return "adios";
+            }
+
+            //METODO--COMPORTAMIENTO DEL OBJETO
+            hablar(){
+                return "Cuak";
+            }
+
+            quienSoy(){                
+                return "Hola soy "+ this.name;
+            }
+        }
+
+        // var pato = new Animal();
+        // pato.hablar();
+
+        // var donald = new Animal();
+        // console.log(donald.hablar());
+        
+        // var pato = new Animal("Donald")
+        // console.log(pato.quienSoy());
+
+        // pato.name = "Paco";
+        // console.log(pato.quienSoy());
+
+        // console.log(Animal.despedirse());
+
+        class Clase{
+            constructor(){
+                this.name = "luis";
+                //console.log("constructor "+ this.name);
+            }
+
+            metodo(){
+                console.log("Metodo "+ this.name);
+            }
+        }
+        
+        var c = new Clase();
+
+        // c.name
+        // c.metodo();  
+
+        //HERENCIA
+        //CLASE PADRE
+        class Forma{
+            constructor(){
+                console.log("Soy una forma geometrica");
+            }
+            gritar(){
+                console.log("aaaaa");
+            }
+        }
+
+        //CLASES HIJOS
+        // class Cuadrado extends Forma{
+        //     constructor(){
+        //         super();
+        //         console.log("Soy un cuadrado");
+        //     }
+        // }
+        // class Circulo extends Forma{
+        //     constructor(){
+        //         super();
+        //         console.log("Soy un circulo");
+        //     }
+        // }
+        // class Triangulo extends Forma{
+        //     constructor(){
+        //         super();
+        //         console.log("Soy un triangulo");
+        //     }
+        // }
+
+        // var cu1 = new Cuadrado();
+        // cu1.gritar();
+        // var ci1 = new Circulo();
+        // ci1.gritar();
+        // var t1 = new Triangulo();
+        // t1.gritar();
+
+
+        //SOBRECARGA
+        class Padre{
+            tarea(){
+                console.log("Tarea del padre");
+            }
+            tarea(value){
+                console.log("Tarea del padre con valor [sobrecarga]: "+value);
+            }
+        }
+
+        // new Padre().tarea();
+
+
+        //SOBREESCRITURA
+        class Hijo extends Padre{
+            tarea(){
+                super.tarea();
+                console.log("+ tarea del hijo ...");
+            }
+        }
+
+        // new Hijo().tarea();
+
+        class Animal2{
+            constructor(n){
+                this.nombre = n;
+            }
+            
+            get nombre(){
+                return "Sr "+ this._nombre;
+            }
+
+            set nombre(n){
+                this._nombre = n.trim();
+            }
+
+            hablar(){
+                return "cuak";
+            }
+
+            quienSoy(){
+                return "Hola, soy "+ this.nombre;
+            }
+        }
+
+        // var pato = new Animal2("Donald");
+        // pato.nombre;
+        // pato.nombre = "Lucas";
+        // pato.nombre;
+
+
+
+        //POLIMORFISMO
+        class Forma{
+            dibujar(){
+                console.log("Dibujando forma");
+            }
+            borrar(){
+                console.log("Borranfo forma");
+            }
+        }
+
+        class Circulo extends Forma{
+            dibujar(){
+                console.log("Calculando diametro ");
+                console.log("Dibujando circulo");
+                hacerOtraCosa();
+            }
+
+            borrar(){
+                console.log("Borrando circulo");
+            }
+            hacerOtraCosa(){
+                console.log("Haciendo otras cosas");
+            }  
+        }
+
+        class Cuadrado extends Forma{
+            dibujar(){
+                console.log("Dibujando lado A")
+                console.log("Dibujando lado B")
+                console.log("Dibujando lado C")
+                console.log("Dibujando lado D")
+            }
+            borrar(){
+                console.log("Dibujando cuadrado");
+            }
+        }
+
+        class Pantalla{
+            mostrarFormas(forma){
+                forma.dibujar();
+            }
+            limpiarPantalla(forma){
+                forma.borrar();
+            }
+        }
+
+        let circulo1 = new Circulo();
+        let circulo2 = new Circulo();
+        let cuadrado1 = new Cuadrado();
+        let myPantalla = new Pantalla();
+
+        myPantalla.mostrarFormas(circulo1);
+        myPantalla.limpiarPantalla(circulo1);
+
+        myPantalla.mostrarFormas(circulo2);
+        myPantalla.limpiarPantalla(circulo2);
+
+        myPantalla.mostrarFormas(cuadrado1);
+        myPantalla.limpiarPantalla(cuadrado1);
+
+        
+    </script>
+</body>
+</html>

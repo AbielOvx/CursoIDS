@@ -1,0 +1,29 @@
+thead th{
+    background-color: cyan;
+    border: 1px solid black;
+}
+
+tbody td{
+    
+    border: 1px solid black;
+}
+
+tfoot th{
+    background-color: rgb(113, 200, 135);
+    border: 1px solid black;
+    text-align: right;
+}
+
+col{
+    background-color: rgb(192, 218, 49);
+    border: 1px solid black;
+}
+
+table{
+    border: 3px solid black;
+    text-align: center;
+}
+
+th{
+    border: 1px solid black;
+}

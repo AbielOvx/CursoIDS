@@ -1,0 +1,141 @@
+body{
+    background: red;
+}
+
+header{
+    height: 70px;
+    background: navy;
+}
+
+main{
+    height: 150px;
+    width: 90%;
+    margin: 0 auto;
+    background: orange;
+}
+
+footer{
+    height: 80px;
+    background: lightblue;
+}
+
+@media only screen and (max-width:800px){
+    body{
+        background: lime;
+    }
+    header::before{
+        content: 'Ancho maximo de 800px';
+        font-size: 50px;
+        color: #fff;
+    }
+    footer{
+        background: #17a589;
+    }
+
+}
+@media only screen and (max-width:600px){
+    body{
+        background: yellow;
+    }
+    header::before{
+        content: 'Ancho maximo de 600px';
+        font-size: 50px;
+        color: #fff;
+    }
+}
+
+@media only screen and (min-width:1000px){
+    body{
+        background: purple;
+    }
+    header::before{
+        content: 'Ancho minimo de 1000px';
+        font-size: 50px;
+        color: #fff;
+    }
+    footer{
+        background: #FF5733;
+    }
+
+}
+
+// @mixin open_sans_ligth($size) {
+//     font-family: 'Open Sans', sans-serif;
+//     font-weight: 300;
+//     font-size: $size;
+// }
+
+// p{
+//     @include open_sans_ligth(20px);
+// }
+
+
+// ul{
+//     font-family: sans-serif;
+//     background: #000;
+//     color: #fff;
+//     margin: 20px 0;
+//     padding: 5px;
+
+//     li{
+//         margin: 5px;
+//         padding: 10px;
+//         background: #444;
+
+//         a{
+//             display: block;
+//             color: inherit;
+//             text-decoration: none;
+//         }
+//     }
+// }
+
+// $ancho_total: 600px;
+// $ancho_principal:400px;
+// $calle:20px;
+
+// #contenedor{
+//     width: $ancho_total;
+//     background: #000;
+//     padding: $calle;
+//     font-family: Arial, Helvetica, sans-serif;
+//     overflow: auto;
+// }
+
+// #principal{
+//     float: left;
+//     width: $ancho_principal;
+//     background: #2BA47D;
+// }
+
+// #secundario{
+//     float: right;
+//     width: $ancho_total - $ancho_principal - $calle;
+//     background: red;
+// }
+
+// $color_principal: #fff;
+// $color_secundario: #2ba47d;
+// $tamano_texto: 15px;
+
+// body{
+//     color: $color_principal;
+//     background: $color_secundario;
+//     font-size: $tamano_texto;
+// }
+
+
+// .boton{
+//     font-family: sans-serif;
+//     border-radius: 3px;
+//     padding: 8px;
+//     display: inline-block;
+//     text-decoration: none;
+//     padding: 10px;
+//     color: #000;
+// }
+
+// .boton-importante{
+//     @extend .boton;
+//     background: #f00;
+// }

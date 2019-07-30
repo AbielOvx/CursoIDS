@@ -1,0 +1,83 @@
+@charset "utf-8";
+
+body{
+    background-color: #D5DBDB
+}
+
+*{
+    color: blue;
+}
+
+p{
+    color: green;
+}
+
+p.class-parr-3{
+    color: red;
+}
+
+.class-parr-2{
+    color: black;
+}
+
+li#e-uno{
+    font-size: 25px;
+}
+
+#e-dos{
+    color: black;
+    font-size: 40px;
+}
+
+div{
+    border: yellow 3px solid;
+}
+
+/* todos las etiquetas h2 que se encuentren dentro de cualquier div */
+div h2{
+    color: red;
+}
+
+/* selector de descendientes, todas las p que se encuentren dentro del div no importando que tenga etiquetas intermedias */
+div p{
+    color: deeppink;
+}
+
+/* selector de hijos, afecta a todas las p que sean hijos del div con clase div-4 */
+div.div-4 > p{
+    color: orange;
+}
+
+/* hermano inmediato, es decir la primer etiqueta en seguida del article que contenga la clase artic*/
+article.artic + span{
+    font-size: 40px;
+    color: black;
+}
+
+/* hermanos generales, solo tienen que ser hijos de la etiqueta article */
+article~span{
+    font-size: 30px;
+    color: turquoise;
+}
+
+/* por atributo, afecta a los th que tengan el atributo scope */
+th[scope]{
+    color: yellowgreen;
+}
+
+/* Afecta a todos los th que tengan el atributo scope y que su valor sea row */
+th[scope="row"]{
+    color: mediumslateblue;
+    background-color: goldenrod;
+}
+
+/* afecta a todos los td que el valor de su clase sea igual a price */
+td[class="price"]{
+    background-color: darkgrey;
+}
+
+/* afecta a todos los td que en el valor de su clase por lo menos contenga la palabra product */
+td[class~="product"]{
+    background-color: yellowgreen;
+    text-transform: uppercase;
+}

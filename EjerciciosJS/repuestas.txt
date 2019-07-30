@@ -1,0 +1,59 @@
+Ejercicio 1: "not a test"
+----Al entrar a la comparacion estricta la variable 'a' es igual a un 0 por lo tanto la condicion devuelve un true, ejecutando la sentencia que se encuentra en seguida de nuestra condicion ternaria, se le asigna el valor de 1 a la variable 'a' y se le anexa el texto 'test' a la variable 'str'.
+
+Ejercicio 2: Error
+----Esta funcion genera un error porque primeramente tenemos que crear una variable que almacene el resultado de nuestra condicion ternaria y esta a su vez retornarla para poder mostrar un resultado.
+
+Ejercicio 3: Error
+----Este ejercicio arroja un error, primeramente no se encuentra la variable 'a' definida, por lo tanto no puede haber una comparacion, despues no hay una variable que almacene el resultado de nuestra condicion ternaria, despues se mostrará otro error, las condiciones creadas a partir de la palabra resevada if y su contraparte else no pueden ir en la misma linea, deben ser separadas por un salto de linea y sus respectivas llaves.
+
+Ejercicio 4: Error
+----Este ejercicio arroja un error porque no se puede usar la sentencia break dentro de una condicion ternaria, si colocamos la sintaxis original de las condiciones entonces aqui si se podra usar la sentencia break para romper el ciclo.
+
+Ejercicio 5: I will always run
+---- Al entrar a nuestro bloque de codigo switch la variable "value" tiene un valor asignado de uno, por lo tanto entrara en el caso 1 y mostrara en consola el texto "I will always run".
+
+Ejercicio 6: I will run since animal does not match any other case
+----Al entrar a nuestra funcion se crea una variable con el nombre de animal y se le da el valor de "Lion", despues al entrar al switch no entra a ninguno de los case establecidos, al no hacerlo entra directamente en el default del switch por lo tanto nos mostrara en consola el mensaje antes mencionado.
+
+Ejercicio 7: undefined
+----Este ejercicio no contiene ningun error mas sin embargo no significa que este bien, la variable name que esta recibiendo el switch no esta definida, por lo tanto, no esta entrando en nuestro bloque switch y no esta cumpliendo con ninguno de los casos definidos, de esta manera no se esta ejecutando niguna funcion y por eso el resultado que nos muestra en consola es una tipo de dato indefinido.
+
+Ejercicio 8: Either a, b, or c was selected
+----En nuestra funcion que se creo se definio el valor de la variable x y se le coloco la letra "c", esto ocasiono que el switch entrara en su primer caso, el cual tenemos definido de 3 maneras, si la letra a, b o c son introducidas entran en este mismo caso, por lo tanto nos arroja el mensaje antes mencionado.
+
+Ejercicio 9:
+
+var x = 5 + 7; ------- 12
+    
+var x = 5 + "7"; ----- "57"
+var x = "5" + 7; ----- "57"
+var x = 5 - 7; ------- -2
+var x = 5 - "7"; ----- -2
+var x = "5" - 7;  ----- -2
+var x = 5 - "x"; ----- NaN
+
+
+-------------------------------------------------
+
+
+Ejercicio 10:
+
+var a = 'hello' || ''; ------------ hello
+var b = '' || []; ----------------- []length: 0
+var c = '' || undefined; ---------- undefined
+var d = 1 || 5; ------------------- 1
+var e = 0 || {}; ------------------ {}
+var f = 0 || '' || 5; ------------- 5
+var g = '' || 'yay' || 'boo'; ----- yay
+
+
+Ejercicio 11;
+
+var a = 'hello' && '';
+var b = '' && [];
+var c = undefined && 0;
+var d = 1 && 5;
+var e = 0 && {};
+var f = 'hi' && [] && 'done';
+var g = 'bye' && undefined && 'adios';

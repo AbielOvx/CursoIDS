@@ -1,0 +1,5 @@
+1.- Una etiqueta es parte fundamental para estructurar una pagina html, un atributo define el comportamiento de las etiquetas.
+2.-el tag section define una seccion dentro de nuestra pagina html, el article es utilizado para contener articulos, es recomendable colocar un article dentro de un section para buenas practicas.
+3.-existen 6 niveles de titulo
+4.-El html semantico es la estructura definida de una pagina html, es un paradigma de colocacion de etiquetas para definir una estructura ordenada. 
+5.-los valores de un atributo data se obtienen mediante javascript, primeramente obtenemos el id de la etiqueta de donde deseamos obtener los datos, teniendo el atributo ejecutamos en js la linea document.getelementbyid("id_de_etiqueta").dataset."nombre_del_atributo_data", con esto recuperamos la informacion del atributo personalizado

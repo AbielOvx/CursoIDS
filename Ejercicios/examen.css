@@ -1,0 +1,84 @@
+@charset "utf-8";
+
+.screen{
+    background-color: gray;
+    text-align: right;
+    color: white;
+    width: 400px;
+    height: 150px;
+    font-size: 90px;
+    font-family:  Helvetica, sans-serif, Arial;
+
+}
+.numeros{
+    border: 1px solid gray;
+    text-align: center;
+    width: 100px;
+    height: 85px;
+    font-size: 30px;
+}
+
+.numero-0{
+    border: 1px solid gray;
+    text-align: left;
+    padding-left: 44px;
+    width: 100px;
+    height: 85px;
+    font-size: 30px;
+}
+
+.operadores{
+    background-color: orange;
+    border: 1px solid gray;
+    text-align: center;
+    color: white;
+    width: 100px;
+    height: 85px;
+    font-size: 30px;
+}
+
+
+/* @media only screen and (max-width:800px){
+    
+    header::before{
+        
+        
+    }
+    
+    
+
+} */
+
+
+/* @media only screen and (max-width:600px){
+    
+    header::before{
+        content: 'Ancho maximo de 600px';
+        font-size: 50px;
+        color: #fff;
+    }
+} */
+
+
+
+/* @media only screen and (min-width:1000px){
+    
+    .screen::before{
+        width: 800px;
+        height: 800px;
+        
+            background: cyan;
+        
+    }
+    .numeros::before{
+        width: 800px;
+        height: 800px;
+    }
+    .operadores::before{
+        width: 800px;
+        height: 800px;
+    }
+  
+
+} */
+

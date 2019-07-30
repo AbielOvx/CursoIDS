@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <title>Atributos personalizados</title>
+</head>
+<body>
+    <section>
+        <img 
+        id="miImagen"
+        src="ImgAlpes.jpg" 
+        alt="Texto alt"
+        data-camara="Cannon3Gx"
+        data-efecto="ISO 7000"
+        data-geo="120.2441, -19.3342"
+        data-fecha="29/03/2018">
+    </section>
+    
+    <script>
+        var imgsConEfecto = document.querySelectorAll('img[data-efecto]');
+        var camara = document.getElementById('miImagen').dataset.camara;
+
+        var elemento = document.getElementById('miImagen');
+        var cam = elemento.dataset.camara;
+
+        var attribute = elemento.getAttribute("data-geo");
+        elemento.setAttribute("data-geo", "19.9982, -200.3321");
+
+        console.log("Atributos data");
+        console.log(camara);
+
+    </script>
+</body>
+</html>

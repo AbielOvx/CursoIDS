@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" onmousemove = "Mouse(event)" >
+        
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio Mover Raton</title>
+     
+</head>
+<body id="body">
+    <script>
+        var div = document.createElement('div');
+        div.setAttribute("id", "mouse");
+        div.setAttribute("style", "position: absolute;");
+        var app = document.querySelector("#body");
+        app.appendChild(div);
+        
+        function Mouse(e){
+            var x = e.clientX;
+            var y = e.clientY;
+            var a = document.getElementById("mouse");
+            
+            a.textContent="Cordenada X: "+x+", Cordenada Y: "+y;
+            a.style.background = "orange";
+            a.style.border = "4px dotted black";
+            a.style.height = "50px";
+            a.style.width = "250px";
+            a.style.display = "flex";
+            a.style.justifyContent="center";
+            a.style.alignItems = "center";
+            a.style.top = y+20+ "px";
+            a.style.left = x+20 + "px";
+           
+        }
+    </script>
+</body>
+</html>

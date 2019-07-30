@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html onclick="procesaEvento(this,event)" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio 1 JS</title>
+</head>
+<body onclick="procesaEvento(this,event)">
+    <div onclick="procesaEvento(this,event)"><fieldset>click aqui</fieldset></div>
+    <!-- <span id="num"><strong>Hola</strong></span>
+    <div class="info"></div>
+
+    <div id="page" class="info data dark" data-number="5"></div>
+     -->
+
+    <!-- <fieldset id="app">
+        <label>hola</label>
+        <div>inicial</div>
+    </fieldset> -->
+<!-- 
+    <div id="app">
+        <div class="header">
+            <h1>titular</h1>
+        </div>
+        <p>parrafo de descripcion</p>
+        <a href="/">Enlace</a>
+    </div> -->
+
+
+
+
+        <p>Eventos html</p>
+        <button onclick="this.innerHTML=Date();">La fecha es: </button>
+
+        <p onclick="javascript:alert('mensaje');">Parrafo</p>
+
+        <div>
+            <img onclick="alert('Has hecho click')" src="" alt="Imagen">
+        </div>
+
+        <button id="idBoton" onclick="Mensaje()" title="Click">Click aqui</button>
+
+        <textarea onblur="focusOut()" id="area" cols="30" rows="10"></textarea>
+
+        <div>
+            <img src="" alt="texto" onclick="updateCounter(event)">
+            <p>Has hecho click <span id="num">0</span> veces</p>
+        </div>
+
+
+        <div id="div_principal">Hola</div>
+
+
+        
+   
+
+    <!-- <script>
+        var s = 'Hola';
+        var n = 42;
+        var b = true;
+        var u;
+
+        console.log(typeof(s));
+        console.log(typeof(n));
+        console.log(typeof(b));
+        console.log(typeof(u));
+
+        function saludar(){
+            console.log("Hola, soy una funcion");
+        }
+        saludar();
+
+        function tablaMultiplicar(tabla, hasta=10){
+            for (i = 0; i < hasta; i++) {
+                console.log(tabla, 'x',i,'=',tabla*i);
+                
+            }
+        }
+        tablaMultiplicar(1);
+        tablaMultiplicar(5,11);
+
+        function sumar(a,b){
+            console.log("Realizado");
+            return (a+b);
+        }
+
+        var resultado = sumar(1,2);
+        console.log(resultado);
+
+        function f(x,y=2,z=7){
+            return (x+y+z);
+        }
+        console.log(f(5,undefined));
+
+        var animal = 'kitty';
+        var result = (animal === 'kitty') ? 'cute' : 'still nice';
+        console.log(comparar('kitty'));
+        
+        function comparar(animal){
+            
+            if (animal === 'kitty') {
+                result = 'cute';
+            }else{
+                result = 'still nice';
+            }
+        
+        return result;
+        }
+
+        console.log(comparar('kitty'));
+
+
+    </script> -->
+
+  <script>
+
+       /****************************
+        *  EVENTOS PERSONALIZADOS  *
+        ****************************/
+
+    function muestraMensaje(){
+        console.log("Has realizado click")
+    }
+    var div = document.getElementById("div_principal")
+    div.addEventListener("click", muestraMensaje,false);
+
+    // div.removeEventListener("click",muestraMensaje, false);
+
+    var event = new Event("build");
+
+    div.addEventListener("build", function (e) {console.log(e);});
+    div.dispatchEvent(event);
+
+    var event2 = new CustomEvent ("build2",{"detail":"valor-parametro", bubbles:true});
+
+
+
+
+
+    function procesaEvento(element, e){
+        // console.log("evento click");
+        // console.log(element);
+        // console.log(e);
+
+    }
+
+
+      function focusOut(){
+        alert("Perdio foco");
+      }
+
+    //   function Mensaje(){
+    //       alert("Click");
+    //   }
+
+        // function Mensaje(){
+        //     alert("Click");
+        // }
+
+        // document.getElementById("idBoton").onclick = muestraMensaje;
+
+
+
+        const Abiel = {
+            nombre: 'Abiel',
+            edad: 25,
+        };
+        const Pedro = {
+            nombre: 'Pedro',
+            edad: 25,
+        };
+
+        let nombre = function(obj){
+            obj.hablar = function(){
+                console.log(this.nombre);
+            }
+            return obj;
+        }
+
+        // nombre(Abiel).hablar();
+        // nombre(Pedro).hablar();
+        
+
+        //Event, paso de datos del evento
+
+        var contador;
+        function updateCounter(e){
+            console.log(e);
+            console.log(e.detail);
+            console.log("contador "+contador);
+            contador++;
+            document.querySelector("#num").textContent = e.detail;
+        }
+
+
+
+    function modificarContenido(){
+
+
+        //Recupera el selector con la clase info y cambia el contenido
+        // var div = document.querySelector('.info');
+        // div.textContent = 'Hola a todos';
+        // div.textContent;
+
+        // div.innerHTML = '<strong>Holaa</strong>';
+        // div.innerHTML;
+        // div.textContent;
+
+
+        //Crea un nuevo elemento dentro del dom
+        // var div = document.createElement('div');
+
+
+        //recupera un elementro dentro de nuestra pagina y podemos consular metodos sobre los atributos que este contiene
+        // var div = document.querySelector("#page");
+
+        // div.hasAttribute("data-number");
+        // div.hasAttributes();
+
+        // div.getAttributeNames();
+        // div.getAttribute("id");
+        // div.removeAttribute("id");
+        // div.setAttribute("id", "page");
+
+
+        //Crear un elemento e ingresarlo dentro de nuestro dom
+        //var div = document.createElement('div');
+        //div.textContent = "Esto es un div insertado con JS";
+        
+        //localiza el div que esta en el dom, y le agrega dentro el nuevo div que se creó con js
+        //var app = document.querySelector("#app");
+        //Agrega el elemento en forma continua
+        // app.appendChild(div);
+
+        //Agrega antes del elemento app
+        //app.insertAdjacentElement("beforebegin",div);
+
+        //inserta dentro de la etiqueta antes del primer hijo
+        //app.insertAdjacentElement("afterbegin",div);
+
+        //inserta dentro despues del ultimo hijo
+        //app.insertAdjacentElement("beforeend",div);
+
+        //inserta despues del elemento app
+        //app.insertAdjacentElement("afterend",div);
+
+        // app.insertAdjacentHTML("beforebegin", " <div id='app2'></div>")
+        
+        // app.insertAdjacentText("beforebegin", "Hola a todos");
+
+        // var div = document.querySelector('#app2');
+        // div.remove();
+
+
+
+        // document.body.children.length;
+        // document.body.children;
+        // document.body.parentElement;
+
+        // var app = document.querySelector('#app');
+
+        // app.children;
+        // app.firstElementChild;
+        // app.lastElementChild;
+
+        // var a = app.querySelector('a');
+
+        // a.previousElementSibling;
+        // a.nextElementSibling;
+
+
+        // document.body.childNodes.length;
+        // document.body.childNodes;
+        // document.body.parentNode;
+
+        // var app = document.querySelector("#app");
+
+        // app.childNodes;
+        // app.firstChild.textContent;
+        // app.lastChild.textContent;
+
+        // var a = app.querySelector('a');
+
+        // a.previousSibling;
+        // a.nextSibling;
+
+        
+
+
+
+
+
+    }
+
+    //modificarContenido()
+
+
+    function PropiedadesObject(){
+        var e = document.getElementById("num");
+
+        console.log(e);
+        console.log(e.nodeName);
+        console.log(e.textContent);
+        console.log(e.innerHTML);
+        console.log(e.outerHTML);
+    }
+     //PropiedadesObject();
+
+    function e1(){
+        var a = 0;
+        var str = 'not a ';
+        var b = '';
+        b = a === 0 ? (a = 1, str += 'test') : (a = 2);
+        return b;
+    }
+    // console.log(e1());
+
+
+    function e2(){
+        var a = 1;
+        result = a === 1 ? alert('hey, its 1!') : 0;
+        return result
+    }
+    // console.log(e2());
+
+    function e3(){
+        var a = 1;
+        result = a === 1 ? alert('hey, its 1!') : alert('Weird, what coult it be?');
+        if (a === 1) alert('hey, its 1!') 
+        else alert('Weird, what coult it be?');
+        return result
+    }
+    //console.log(e3());
+
+    function e4(){
+        var animal = 'kitty';
+        for (var i = 0; i < 5; ++i) {
+            //(animal === 'kitty') ? break : console.log(i);
+            
+        }
+    }
+
+    // console.log(e4());
+
+    function e5(){
+        var value = 1;
+        switch (value){
+            case 1:
+                console.log("I will always run")
+                break;
+            case 2:
+                console.log("i will never run")
+                break;
+        }
+
+    }
+
+    // console.log(e5());
+
+    function e6(){
+        var animal='Lion';
+        switch (animal) {
+            case 'Dog':
+                console.log('I will not run since animal !== "Dog" ');
+                break;
+            case 'Cat':
+                console.log('I will not run since animal !== "Cat" ');
+                break;
+            default:
+                console.log("I will run since animal does not match any other case");
+        }
+    }
+    
+    // console.log(e6());
+
+    function e7(){
+        function john(){
+            return 'John';
+        }
+        function jacob(){
+            return 'Jacob';
+        }
+
+        switch (name) {
+            case john():
+                console.log('I will run if name === "John"');
+                break;
+            case 'ja' + 'ne':
+                console.log('I will run if name === "Jane"');
+                break;
+            case john() + ' ' + jacob() + 'Jingleheimer Schmidt':
+                console.log('His name is equal to name too!');
+                break;
+        }
+    }
+
+    // console.log(e7());
+
+    function e8(){
+        var x = "c"
+        switch (x) {
+            case "a":
+            case "b":
+            case "c":
+                console.log("Either a, b, or c was selected");
+                break;
+            case "d":
+                console.log("Only d was selected");
+                break;
+            default:
+                console.log("No case was matched");
+                break;
+        }
+    }
+
+    // console.log(e8());
+    function e9(){
+        console.log(5 + 7);
+        console.log(5 + "7");
+        console.log("5" + 7);
+        console.log(5 - 7);
+        console.log(5 - "7");
+        console.log("5" - 7);
+        console.log(5 - "x");
+    }
+
+    //e9();
+
+//--------------------------------------------
+
+    function e10(){
+        console.log('hello' || '');
+        console.log('' || []);
+        console.log('' || undefined);
+        console.log(1 || 5);
+        console.log(0 || {});
+        console.log(0 || '' || 5);
+        console.log('' || 'yay' || 'boo');
+    }   
+   
+
+
+    //e10();
+
+
+    function e11(){
+        console.log('hello' && '');
+        console.log('' && []);
+        console.log(undefined && 0);
+        console.log(1 && 5);
+        console.log(0 && {});
+        console.log('hi' && [] && 'done');
+        console.log('bye' && undefined && 'adios');
+    }   
+
+    e11();
+
+
+
+
+
+    function ordBurbuja(){
+        var ord=[2,76,3,7,32,8,9];
+
+        var f = function(a,b){
+            if(a>b){
+                return 1;
+            }else if(a<b){
+                return 1;
+            }
+            return 0;
+        }
+
+        console.log(ord.sort(f));
+    }
+
+
+    function array(){
+        // var array =['a','b','c'];
+
+        // array.push('d') ;
+        // array.pop();
+
+        // array.unshift('z');
+        // array.shift();
+
+        // var array = [1,2,3];
+        // array.push(4,5,6);
+        // array.push([7,8,9]);
+
+        // var array = [1,2,3];
+        // array.concat(4,5,6);
+        // array.concat([7,8,9]);
+
+        // var array=[1,2,3,4,5,6];
+        // array.slice(2,4);
+        // array.splice(2,2);
+        // array.splice(1,0,9,8);
+
+        var array=[1,8,4,7,23,79,1,3];
+
+        var fc = function(a,b){
+            return a-b;
+        }
+
+        array.sort(fc);
+        console.log(array);
+    }
+
+
+
+
+//    console.log(array());
+
+
+    function Ejercicio1JS(){
+        var a = [1,2,3,8,9,10];
+        a.slice(0,3).concat([4,5,6,7], a.slice(3,6));
+
+        var a = [1,2,3,8,9,10];
+        a.splice(3,0,...[4,5,6,7]);
+
+        return a;
+
+    }
+
+    // console.log(Ejercicio1JS());
+
+    function Ejercicio2JS(){
+        var a = ['1','2','3']
+        var b;
+         a.join('->');
+         a.join('.');
+
+       
+        b = "a.b.c.dd.ccc->d.->".split('.');
+        '5.4.3.2.1'.split('.')
+
+        return b;
+    }
+
+     //console.log(Ejercicio2JS());
+
+    function Ejercicio3JS(){
+        var a = [5,10,15,20,25];
+        var b;
+
+        Array.isArray(a);
+        a.includes(10);
+        a.includes(10,2);
+        a.indexOf(25);
+        b= a.lastIndexOf(10,0);
+
+        return b;
+    }
+
+     //console.log(Ejercicio3JS());
+
+    function Ejercicio4JS(){
+        var a = ['a','b','c','d','e'];
+        var b = ['Alberto','Ana','Mauricio','Bernardo','Zoe'];
+
+        a =a.copyWithin(2,0,1);
+         a.copyWithin(3,0,3);
+        // a.fill('z',0,5);
+
+        b.sort();
+        b.reverse();
+
+        return a;
+
+        //return b;
+    }
+
+   // console.log(Ejercicio4JS());
+
+
+  </script>
+
+</body>
+</html>

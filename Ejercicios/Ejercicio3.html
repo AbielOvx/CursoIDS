@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>Ejercicio 3</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <fieldset>
+            <legend>Datos Básicos</legend>
+            <label for="nombre">Nombre:</label><br>
+            <input type="text" name="nombre" size="45px"> 
+            <br><br>
+            <label for="descripcion">Descripción:</label><br>
+            <textarea name="descripcion" cols="50" rows="10"></textarea>
+            <br><br>
+            <label for="foto">Foto:</label>
+            <input type="file" name="foto" id="foto"><br><br>
+
+            <input type="checkbox" name="Visitas" id="visitas">
+            <label for="Visitas">Añadir contador de visitas</label>
+        </fieldset>
+    </section>
+
+    <section>
+        <fieldset>
+            <legend>Datos Economicos</legend>
+
+            <label for="precio">Precio:</label>
+            <input type="text" name="nombre" size="5px"> 
+            <label>€</label>   
+            
+            <label >Impuestos:</label>
+            <select name="nombre" id="nombre">
+                <option value="">4%</option>
+            </select>
+           
+            <br><br>
+            <label for="promocion">Promocion</label><br>
+            <input type="radio" name="promocion" value="1492">
+            <label>Ninguno</label><br>
+            <input type="radio" name="promocion" value="1789">
+            <label>Transporte Gratuito</label><br>
+            <input type="radio" name="promocion" value="1917">
+            <label>Descuento 5%</label>
+        </fieldset>
+    </section>
+    <br><br>
+
+    <section>
+       
+            <table id="tabla"
+            data-años="2"
+            data-productos="4"
+            data-nombre="nombre"
+            data-titulo="Titulo"
+            width="50%">
+            <legend>Analisis de ventas anuales</legend>
+                <tr>
+                    <th rowspan="2">Año</th>
+                    <th colspan="4">Expansion de ventas</th>
+                </tr>
+
+                <tr>
+                    <th>Producto A</th>
+                    <th>Producto B</th>          
+                    <th>Producto C</th>
+                    <th>Producto D</th>
+                </tr>
+
+                <tr>
+                    <th>N-3</th>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                    <td>-</td>
+                </tr>
+
+                <tr>
+                    <th>N-2</th>
+                    <td>3</td>
+                    <td>5</td>
+                    <td>8</td>
+                    <td>4</td>
+                </tr>
+
+                <tr>
+                    <th>N-1</th>
+                    <td>4</td>
+                    <td>4</td>
+                    <td>7</td>
+                    <td>3</td>
+                </tr>
+
+                <tr>
+                    <th>N</th>
+                    <td>5</td>
+                    <td>7</td>
+                    <td>6</td>
+                    <td>2</td>
+                </tr>
+
+                <tr>
+                    <th rowspan="2">Año</th>
+                    <th>Producto A</th>
+                    <th>Producto B</th>          
+                    <th>Producto C</th>
+                    <th>Producto D</th>
+                </tr>
+
+                <tr>
+                    
+                    <th colspan="4">Expansion de ventas</th>
+                </tr>
+          
+          </table>
+          
+    </section>
+
+    <script>
+        console.log(document.getElementById("tabla").dataset.años);
+        console.log(document.getElementById("tabla").dataset.productos);
+        console.log(document.getElementById("tabla").dataset.nombre);
+        console.log(document.getElementById("tabla").dataset.titulo);
+    </script>
+</body>
+</html>

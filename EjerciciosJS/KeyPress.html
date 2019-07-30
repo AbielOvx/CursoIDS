@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" onkeydown="Letras(event)">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Key Press</title>
+</head>
+<body>
+    <div>
+        <fieldset style="width:100px; height:130px; background:darkgoldenrod; color:white; border: 3px dotted black">
+            <p>Tecla presionada: </p>
+            <p id="key"></p>
+            <p id="code"></p>
+        </fieldset>
+    </div>
+    <script>
+
+        function Letras(e) {
+            document.getElementById("key").innerHTML = e.key;
+            document.getElementById("code").innerHTML = e.code;
+            
+        }
+
+    </script>
+</body>
+</html>
