@@ -119,20 +119,20 @@
         *  EVENTOS PERSONALIZADOS  *
         ****************************/
 
-    function muestraMensaje(){
-        console.log("Has realizado click")
-    }
-    var div = document.getElementById("div_principal")
-    div.addEventListener("click", muestraMensaje,false);
+    // function muestraMensaje(){
+    //     console.log("Has realizado click")
+    // }
+    // var div = document.getElementById("div_principal")
+    // div.addEventListener("click", muestraMensaje,false);
 
-    // div.removeEventListener("click",muestraMensaje, false);
+    // // div.removeEventListener("click",muestraMensaje, false);
 
-    var event = new Event("build");
+    // var event = new Event("build");
 
-    div.addEventListener("build", function (e) {console.log(e);});
-    div.dispatchEvent(event);
+    // div.addEventListener("build", function (e) {console.log(e);});
+    // div.dispatchEvent(event);
 
-    var event2 = new CustomEvent ("build2",{"detail":"valor-parametro", bubbles:true});
+    // var event2 = new CustomEvent ("build2",{"detail":"valor-parametro", bubbles:true});
 
 
 
@@ -425,23 +425,23 @@
         console.log(5 - "x");
     }
 
-    //e9();
+    // e9();
 
 //--------------------------------------------
 
     function e10(){
-        console.log('hello' || '');
+        console.log('Hello' || '');
         console.log('' || []);
-        console.log('' || undefined);
+        console.log(undefined || '');
         console.log(1 || 5);
         console.log(0 || {});
-        console.log(0 || '' || 5);
-        console.log('' || 'yay' || 'boo');
+        console.log('' || 2 || 0);
+        console.log('3' || '4' || 'boo');
     }   
    
 
 
-    //e10();
+    // e10();
 
 
     function e11(){
@@ -455,10 +455,24 @@
     }   
 
     // e11();
-    //Cambios para git nuevamente
+  
+
+    //Ejercicio 12
+    var foo = function(val){
+        return val || 'default';
+    }
+
+    // console.log(foo('burger'));
+    // console.log(foo(100));
+    // console.log(foo([]));
+    // console.log(foo(0));
+    // console.log(foo(undefined));
 
 
 
+    function e12(){
+        var isLegal
+    }
 
 
 

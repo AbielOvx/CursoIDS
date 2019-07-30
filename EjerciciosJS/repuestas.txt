@@ -25,14 +25,19 @@ Ejercicio 8: Either a, b, or c was selected
 Ejercicio 9:
 
 var x = 5 + 7; ------- 12
-    
+    El resultaddo es 12 porque esta sumando numeros enteros de manera normal.
 var x = 5 + "7"; ----- "57"
+    Se muestra este resultado porque el interprete al intentar sumar el numero 5 al string, este convierte el numero 5 tambien a string,por lo tanto se concatenan los numeros.
 var x = "5" + 7; ----- "57"
+    De la misma manera si intentamos sumar un int a un string este int se convertira en string y se concatenara con el string al que le estamos sumando.
 var x = 5 - 7; ------- -2
+    Esta operacion se realiza de manera normal, restandole 7 al numero 5, por lo tanto el resultado es 2.
 var x = 5 - "7"; ----- -2
+    En caso contrario si se resta un int con un string, el interprete convertira el string en int, siempre y cuando el contenido del string sea un numero, despues de esto se hará una resta con numeros enteros.
 var x = "5" - 7;  ----- -2
+    De igual manera se esta restando un sting con un int, siempre y cuando el string sea un numero, se hará la resta de numeros enteros.
 var x = 5 - "x"; ----- NaN
-
+    El resultado nos arroja un "Not a Number" ya que no se puede hacer la resta entre un numero y un string que no es un numero legal, se puede realizar resta entre string e int, pero siempre y cuando el string sea un numero legal para que el interprete pueda hacer la conversion.    
 
 -------------------------------------------------
 
@@ -40,20 +45,52 @@ var x = 5 - "x"; ----- NaN
 Ejercicio 10:
 
 var a = 'hello' || ''; ------------ hello
+    Se muestra la palabra hello porque en operadores logicos una cadena de texto vacia representa un "false".
 var b = '' || []; ----------------- []length: 0
+    Se muestra el arreglo porque la cadena de texto vacia es igual a "false" por lo tanto se imprime la parte que representa un true.
 var c = '' || undefined; ---------- undefined
+    Cuando todas las partes en un OR son falsas el interprete imprime la ultima comparacion, en este caso el undefined.
 var d = 1 || 5; ------------------- 1
+    Cuando todas las partes en un OR son TRUE el interprete imprime la primer comparacion. en este caso el 1
 var e = 0 || {}; ------------------ {}
+    Se muestran las llaves porque el numero cero es igual a "false"
 var f = 0 || '' || 5; ------------- 5
+    Se muestra el numero 5 porque todas las primeras partes son false,por lo tanto el numero 5 esta representando un true y este es el que se imprime.
 var g = '' || 'yay' || 'boo'; ----- yay
+    Se imprimer la palabra "yay" porque el interprete evalua y muestra el primer true que encuentre en toda la comparacion, si son muchas comparaciones siempre se imprimira el primer "TRUE" que encuentre.
 
 
-Ejercicio 11;
+Ejercicio 11:
 
 var a = 'hello' && '';
+    Se muestra la cadena vacia porque el operador logico AND devuelve la parte que representa FALSE.
 var b = '' && [];
+    Se imprime la cadena vacia porque esta representa un false en la comparacion.
 var c = undefined && 0;
+    Cuando todas las partes en un AND son falsas el interprete imprime la primer comparacion.
 var d = 1 && 5;
+    Cuando todas las partes en un AND son true, el interprete imprime la ultima comparacion, en este caso se devuelve el numero 5.
 var e = 0 && {};
+    El numero cero esta representando un false, por lo tanto este es el valor que se muestra en la consola.
 var f = 'hi' && [] && 'done';
+    Cuando todas las partes de la comparacion son TRUE el interprete imprime la ultima comparacion.
 var g = 'bye' && undefined && 'adios';
+    Cuando hay mas de 2 comparaciones el interprete imprime el primer False que encuentre en la comparacion de izquierda a derecha.
+
+
+Ejercicio 12:
+
+console.log(foo('burger'));
+    Se imprime burger porque las 2 partes son true y en el operador logico OR si todas las partes son true, se imprime la primer comparacion.
+console.log(foo(100));
+    Se imprime el numero 100 por la misma logica de la sentencia anterior.
+console.log(foo([]));
+    De igual manera el array es true y se imprime porque es la primer comparacion que representa un true;
+console.log(foo(0));
+    Se imprime "default" porque el numero 0 representa un false y en el operador logico OR se imprime la ultima comparacion que sea true.
+console.log(foo(undefined));
+    El imprime "default" por la misma logica de la sentencia anterior.
+
+
+Ejercicio 13:
+
