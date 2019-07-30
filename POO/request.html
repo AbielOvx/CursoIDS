@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Peticiones HTTP</title>
 </head>
+
 <body>
+    <button id="request">Peticion</button>
     <section id="container">
         Respuesta a peticion:
         <hr>
@@ -26,35 +29,77 @@
         //     let element = document.getElementById("container");
         //     element.innerHTML += text;
         // }
+        function enPantalla(text) {
+            let element = document.getElementById('container');
+            element.innerHTML += text;
+        }
 
 
-            function enPantalla(text){
-                let element = document.getElementById('container');
-                element.innerHTML += text;
+        function consola(text) {
+            console.log(text);
+        }
+
+
+
+        // const req = new XMLHttpRequest();
+        // req.addEventListener('load', () => {
+        //     if (req.status === 200) {
+        //         consola(req.responseText);
+        //         consola(JSON.parse(req.responseText));
+        //         enPantalla(req.responseText);
+        //     } else
+        //         consola([req.status, req.statusText]);
+        // });
+
+        // req.addEventListener('error', () => {
+        //     consola('Error de red');
+        // });
+
+        // req.open('GET', 'https://jsonplaceholder.typicode.com/posts', true);
+        // req.send(null);
+
+
+
+
+
+        // const req = new XMLHttpRequest();
+
+        // req.onload = function() {
+        //     if (req.status >= 200 && req.status < 300) {
+        //         consola(["success!", req]);
+        //     } else
+        //         consola("FALLOO");
+
+        //     consola("Siempre ejecutar");
+
+        // };
+
+        // req.open('GET', 'https://jsonplaceholder.typicode.com/posts/1', true);
+        // req.send();
+
+
+
+        let req = new XMLHttpRequest(),
+            method = "GET",
+            url = "https://jsonplaceholder.typicode.com/posts/1/comments";
+
+        req.open(method, url, true);
+        let contador = 0;
+
+        req.onreadystatechange = function() {
+            consola(["cuantas veces se revisó?: ", contador]);
+            contador++;
+            if (req.readyState === XMLHttpRequest.DONE && req.status === 200) {
+                consola(req.responseText);
+                enPantalla(JSON.parse(req.responseText));
             }
+        };
 
-            function consola(text){
-                console.log(text);
-            }
-
-            const req = new XMLHttpRequest();
-            req.addEventListener('load',()=>{
-                if (req.status === 200) {
-                    consola(req.responseText);
-                    consola(JSON.parse(req.responseText));
-                    enPantalla(req.responseText);
-                }else
-                    consola([req.status,req.statusText]);
-            });
-
-            req.addEventListener('error', ()=>{
-                consola('Error de red');
-            });
-
-            req.open('GET','https://jsonplaceholder.typicode.com/posts', true);
-            req.send(null);
-
-
+        document.getElementById('request').addEventListener('click', function() {
+            this.style.display = 'none';
+            req.send();
+        });
     </script>
 </body>
+
 </html>
