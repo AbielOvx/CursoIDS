@@ -35,7 +35,49 @@ class MiMensaje extends HTMLElement{
     pintarMensaje(msj){
         this.innerHTML = msj;
     }
+
+    get msj(){
+        return this.getAttribute("msj");
+    }
+
+    set msj(val){
+        this.setAttribute("msj",val);
+    }
+
+
+    get casiVisible(){
+        return this.hasAttribute("casi-visible");
+    }
+
+    set casiVisible(value){
+        if (value) {
+            this.setAttribute("casi-visible", "");
+        }else
+            this.removeAttribute("casi-visible");
+    }
+
+
+    setCasiVisible(){
+        if (this.casiVisible) {
+            this.style.opacity = 0.1;
+        }else
+            this.style.opacity = 1;
+    }
+
 }
 
 
 customElements.define('mi-mensaje', MiMensaje)
+
+
+
+let miMensaje = document.createElement('mi-mensaje');
+miMensaje.msj = "otro mensaje";
+document.body.appendChild(miMensaje);
+
+let tercerMensaje = new MiMensaje();
+tercerMensaje.msj = "Tecer mensaje";
+document.body.appendChild(tercerMensaje);
+
+
+
