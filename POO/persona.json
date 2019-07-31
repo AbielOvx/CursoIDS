@@ -1,0 +1,14 @@
+{
+    "nombre":"Hugo sanchez",
+    "edad":43,
+    "email":"hugoelmejor@gmail.com",
+    "sexo":"h",
+    "telefono":"435102442",
+    "color": "#2d572c",
+    "fechaNacimiento": "1972-10-23",
+    "trabajo":{
+        "puesto": "Desarrollador",
+        "email": "hugo.sanchez@ids.com.mx",
+        "telefono": "43510234423"
+   }
+}

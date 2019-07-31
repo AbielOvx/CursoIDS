@@ -103,28 +103,158 @@
 
 
 
-        let datos = {
-            "delay": "5"
+        // let datos = {
+        //     "delay": "5"
+        // }
+
+        // let request = new XMLHttpRequest();
+        // request.open("POST", "https://httpbin.org/delay/5", true);
+
+        // let contador = 0;
+        // request.onreadystatechange = function() {
+        //     consola(["Cuantas veces se reviso? ", contador]);
+        //     contador++;
+        //     if (request.readyState === XMLHttpRequest.DONE && request.status === 200) {
+        //         consola(request.responseText);
+        //         enPantalla(request.responseText);
+
+        //     }
+        // };
+
+        // document.getElementById("request").addEventListener("click", function() {
+        //     this.style.display = "none";
+        //     request.send();
+        // });
+
+
+        // const numero = (num) => {
+        //     return parseInt(num);
+        // }
+
+        // const numero = num => parseInt(num);
+        // const suma = (a,b)=>numero(a) + numero(b);
+
+        
+
+
+        // var petNames = [];
+        // for (var i = 0; i < pets.length; i++) {
+        //     petNames.push(pets[i].name);
+        // }
+        // consola(`Pets Names >> ${petNames}`);
+        // consola(`Ejemplo template string A: ${5+5} `);
+        // consola(`Ejemplo template string B ${petNames.length > 3 ? "ok" : "Cancel"}`);
+
+        // const pets = [
+        //     {name: "Lucho", especies:"eagle"},
+        //     {name: "Juana", especies:"Iguana"},
+        //     {name: "Martin", especies:"Dolphin"}
+        // ];
+        
+
+        //animal es el parametro que esta recibiendo el arreglo pets para hacer referencia a cada uno de los objetos dentro
+        // const petNames = pets.map(animal => animal.name);
+        // consola(`Pets names with map: ${petNames}`);
+
+
+        //funciones anonimas
+        // function saluda(){
+        //     console.log("Hola");
+        // }
+
+        // function Ejecutar(func){
+        //     func();
+        // }
+
+        // Ejecutar(saluda);
+
+
+
+        //IIFE Funcion autoinvocada
+        // (function(){})();
+
+    //    (function(a,b){
+    //         consola(a+b);
+    //     })(1,2);
+
+
+    //     var suma = function(b,c){
+    //         consola(b*c);
+    //     }(4,3);
+
+
+        //CAll BACK 
+        //Funciones que invocan funciones y como parametro reciben funciones
+
+        //Promesas
+
+        let promise1 = new Promise((resolve, reject) => {
+            setTimeout(function (){
+                resolve("Resolucion correcta");
+            },250);
+        });
+
+        promise1.then(mensaje => {
+            consola(`Mesaje de resolucion: ${mensaje}`);
+        });
+
+         consola(promise1);
+
+        let promise2 = new Promise(function(resolve, reject){
+            setTimeout( function(){
+                reject('Done! ');
+            },250);
+        })
+        .then(function(e){
+            console.log('done', e);
+        })
+        .catch(function(e){
+            console.log('catch: ' , e);
+        });
+        
+        consola(promise2);
+
+        // let promise2 = new Promise(function(resolve, reject) {
+        //     // Una tarea asíncrona usando setTimeout
+        //     setTimeout( function() { 
+        //         reject(‘Done!’);
+        //         //reject(Error(‘Data could not be found’));
+        //     }, 250);
+        // })
+        // .then( function(e) { console.log(‘done’, e); })
+        // .catch( function(e) { console.log(‘catch: ’, e); });
+        // console.log(promise2);
+        // // From the console:
+        // // ‘catch: Done!’
+
+
+        function divide(dividendo, divisor){
+            return new Promise ((resolve, reject)=> {
+                if (divisor === 0) {
+                    reject(new Error("No se puede dividir entre cero"));
+                }else{
+                    resolve(dividendo/divisor);
+                }
+            });
         }
 
-        let request = new XMLHttpRequest();
-        request.open("POST", "https://httpbin.org/delay/5", true);
+        try {
+            const result = divide(5,1);
+            consola(result);
+        }catch(err){
+            console.err(mensaje);
+        }
 
-        let contador = 0;
-        request.onreadystatechange = function() {
-            consola(["Cuantas veces se reviso? ", contador]);
-            contador++;
-            if (request.readyState === XMLHttpRequest.DONE && request.status === 200) {
-                consola(request.responseText);
-                enPantalla(request.responseText);
 
-            }
-        };
+        new Promise(function(resolve, reject){
+            setTimeout(function(){resolve(10);},250)
+        })
+        .then(function(num){console.log('First then ',num); return num * 2})
+        .then(function(num){console.log('Second then ',num); return num * 2})
+        .then(function(num){console.log('last then ',num);});
 
-        document.getElementById("request").addEventListener("click", function() {
-            this.style.display = "none";
-            request.send();
-        });
+
+
     </script>
 </body>
 

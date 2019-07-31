@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Promise</title>
+</head>
+<body>
+    <script>
+        function getReq(url){
+            const req = new Promise(function(resolve,reject){
+                const request = new XMLHttpRequest();
+
+                request.addEventListener('load',() => {
+                    console.log("En el listener de load");
+                    if (request.status === 200) {
+                        resolve(request.response);
+                    }else{
+                        reject(request.statusText)
+                    }
+                });
+
+                request.addEventListener('error', () => {
+                    console.log("En el listener de error");
+                    reject("Error de red");
+                });
+
+                request.open("GET", url, true);
+                request.send(null);
+            });
+
+            return req;
+        }
+
+        getReq('./persona.json')
+        .then(res => {return JSON.parse(res);})
+        .then(json => {console.log(json);})
+        .catch(error => {console.log(error);});
+
+
+        console.log(JSON.stringify({x:5, y:6}));
+        console.log(JSON.stringify([new Number(3), new String("False"), new Boolean(false)]));
+        console.log(JSON.stringify({x:[10,undefined, function(){}, Symbol('')]}));
+        console.log(JSON.stringify(new Date(2006,0,2,15,4,5)));
+
+       
+        fetch('https://httpbin.org/post',{
+            method: 'POST',
+            headers: {
+                // 'Content-Type': 'application/x-www-fomr-urlencoded'
+                'Content-Type':'aplication/json'
+            },
+            // body: 'a=1&b=2'
+            body: JSON.stringify({"a":1,"b":2}), cache : 'no-cache'
+
+        })
+        .then(function(response){
+            console.log('response =', response);
+            return response.json();
+        })
+        .then(function(data) {
+            console.log('data =' , data);
+        })
+        .catch(function(err){
+            console.error(err);
+        });
+
+
+
+    </script>
+</body>
+</html>
