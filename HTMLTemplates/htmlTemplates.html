@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>HTML Templates</title>
+    <link rel="stylesheet" href="main.css" media="screen">
+</head>
+<body>
+    <template>
+        <h1>Hola, soy el primer template</h1>
+        <p>¿Como estas?</p>
+    </template>
+
+    <div id="host"></div>
+
+
+    <script>
+        const host = document.querySelector("#host");
+        const tpl = document.querySelector("template");
+        const tplInst = tpl.content.cloneNode(true);
+
+        host.appendChild(tplInst);
+    </script>
+    
+</body>
+</html>

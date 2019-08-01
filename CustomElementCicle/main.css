@@ -6,3 +6,8 @@ mi-mensaje{
     border: 5px solid black;
     margin-bottom: 10px;
 }
+
+mi-mensaje[casi-visible]{
+    border:  none;
+    color: red;
+}

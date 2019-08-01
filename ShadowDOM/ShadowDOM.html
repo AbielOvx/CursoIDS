@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="main.css" media="screen">
+    <title>Shadow DOM</title>
+</head>
+<body>
+    <h1 id="mi-id">Externo</h1>
+    <template>
+        <style>
+            :host{
+                display: block;
+                border: 1px solid orange;
+                margin-bottom: 2rem;
+            }
+            h1#mi-id{
+                margin-left: 1rem;
+                margin-right: 1rem;
+                border: 1px solid green;
+            }
+        </style>
+        <h1 id="mi-id">Hola, soy el primer template</h1>
+        <p>¿Como estas?</p>
+    </template>
+
+    <mi-saludo></mi-saludo>
+    <mi-saludo></mi-saludo>
+    <mi-saludo></mi-saludo>
+    <mi-saludo></mi-saludo>
+    <mi-saludo></mi-saludo>
+    <mi-saludo></mi-saludo>
+    <mi-saludo></mi-saludo>
+
+
+    <script src="main.js"></script>
+</body>
+</html>

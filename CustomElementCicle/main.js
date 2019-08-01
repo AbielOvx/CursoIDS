@@ -9,7 +9,7 @@ class MiMensaje extends HTMLElement{
 
 
     static get observedAttributes(){
-        return ['msj'];
+        return ['msj','casi-visible'];
     }
 
 
@@ -27,8 +27,11 @@ class MiMensaje extends HTMLElement{
 
     attributeChangedCallback(attrName, oldVal, newVal){
         console.log("attributeChangedCallback: Cuando cambia un atributo");
-        if (attrName == "msj") {
+        if (attrName === "msj") {
             this.pintarMensaje(newVal);
+        }
+        if (attrName === "casi-visible") {
+            this.setCasiVisible();
         }
     }
 
